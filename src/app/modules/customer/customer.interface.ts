@@ -1,17 +1,28 @@
+export type FullName = {
+  fristName: string;
+  lastName: string;
+};
+
+export type Address = {
+  street: string;
+  city: string;
+  country: string;
+};
+
+export type Orders = {
+  productName: string;
+  Price: number;
+  quantity: number;
+};
+
 export type customer = {
   id: number;
   userName: string;
-  fullName: {
-    fristName: string;
-    lastName: string;
-  };
+  fullName: FullName;
   age: string;
   email: string;
-  isActive: 'active' | 'inactive';
-  hobbies: [string, string];
-  address: {
-    street: string;
-    city: string;
-    country: string;
-  };
+  isActive: true | false;
+  hobbies?: [string];
+  address: Address;
+  orders?: [Orders];
 };
