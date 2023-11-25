@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(cors());
 
 // application routers
-app.use('/post', customerRoutes);
+app.use('/', customerRoutes);
 
 const getControler = (req: Request, res: Response) => {
   res.send('Hello World! hi');

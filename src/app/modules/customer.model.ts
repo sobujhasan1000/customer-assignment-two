@@ -24,14 +24,18 @@ const orderSchema = new Schema<Orders>({
 });
 
 const customerschema = new Schema<customer>({
-  id: { type: Number },
+  id: { type: Number, required: true },
+  password: { type: String, required: true },
   userName: { type: String, required: true },
-  fullName: fullNameSchema,
+  fullName: { type: fullNameSchema, required: true },
   age: { type: String, required: true },
   email: { type: String, required: true },
   isActive: { type: Boolean, required: true },
-  hobbies: { type: String },
-  address: addressSchema,
+  hobbies: { type: [String] },
+  address: {
+    type: addressSchema,
+    required: true,
+  },
   orders: [orderSchema],
 });
 

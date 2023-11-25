@@ -17,12 +17,13 @@ export type Orders = {
 
 export type customer = {
   id: number;
+  password: string;
   userName: string;
   fullName: FullName;
   age: string;
   email: string;
   isActive: true | false;
-  hobbies?: string | string[];
+  hobbies?: string;
   address: Address;
   orders?: [Orders];
 };
