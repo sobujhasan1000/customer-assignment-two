@@ -1,5 +1,5 @@
 export type FullName = {
-  fristName: string;
+  firstName: string;
   lastName: string;
 };
 
@@ -11,7 +11,7 @@ export type Address = {
 
 export type Orders = {
   productName: string;
-  Price: number;
+  price: number;
   quantity: number;
 };
 
@@ -22,7 +22,7 @@ export type customer = {
   age: string;
   email: string;
   isActive: true | false;
-  hobbies?: [string];
+  hobbies?: string | string[];
   address: Address;
   orders?: [Orders];
 };

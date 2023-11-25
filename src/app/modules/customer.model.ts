@@ -1,4 +1,4 @@
-import { Schema, model, connect } from 'mongoose';
+import { Schema, model } from 'mongoose';
 import {
   Address,
   FullName,
@@ -7,7 +7,7 @@ import {
 } from './customer/customer.interface';
 
 const fullNameSchema = new Schema<FullName>({
-  fristName: { type: String, required: true },
+  firstName: { type: String, required: true },
   lastName: { type: String, required: true },
 });
 
@@ -19,7 +19,7 @@ const addressSchema = new Schema<Address>({
 
 const orderSchema = new Schema<Orders>({
   productName: { type: String },
-  Price: { type: Number },
+  price: { type: Number },
   quantity: { type: Number },
 });
 
@@ -29,8 +29,10 @@ const customerschema = new Schema<customer>({
   fullName: fullNameSchema,
   age: { type: String, required: true },
   email: { type: String, required: true },
-  isActive: [true, false],
+  isActive: { type: Boolean, required: true },
   hobbies: { type: String },
   address: addressSchema,
-  orders: [addressSchema],
+  orders: [orderSchema],
 });
+
+export const customermodel = model<customer>('customer', customerschema);
