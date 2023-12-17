@@ -36,7 +36,7 @@ const customerschema = new Schema<customer>({
     type: addressSchema,
     required: true,
   },
-  orders: [orderSchema],
+  orders: [{ type: orderSchema }],
 });
 
 export const customermodel = model<customer>('customer', customerschema);

@@ -25,5 +25,5 @@ export type customer = {
   isActive: true | false;
   hobbies?: string;
   address: Address;
-  orders?: [Orders];
+  orders?: Orders[];
 };

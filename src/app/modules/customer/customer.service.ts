@@ -23,10 +23,25 @@ const deleteSpecifiqCustomerDB = async (id: string) => {
   return result;
 };
 
+const getSpecifiqCustomerOrder = async (id: string) => {
+  const result = await customermodel.findOne({ id }).select('orders');
+  return result;
+};
+const getSpecifiqCustomerTotalPrice = async (id: string) => {
+  const orderdata = await customermodel.findOne({ id }).select('orders');
+  const TotalPrice = orderdata?.orders?.reduce(
+    (acc, order) => acc + order.price * order.quantity,
+    0,
+  );
+  return TotalPrice;
+};
+
 export const customerServices = {
   createCustomerDB,
   getAllCustomerDB,
   getSpecifiqCustomerDB,
   deleteSpecifiqCustomerDB,
   updateSpecifiqCustomerDB,
+  getSpecifiqCustomerOrder,
+  getSpecifiqCustomerTotalPrice,
 };

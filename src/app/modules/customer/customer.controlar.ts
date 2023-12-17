@@ -49,6 +49,21 @@ const getSpecifiqcustomer = async (req: Request, res: Response) => {
   }
 };
 
+// get all specifiq customer total order list
+const getSpecifiqcustomerOrder = async (req: Request, res: Response) => {
+  try {
+    const customerId = req.params.userId;
+    const result = await customerServices.getSpecifiqCustomerOrder(customerId);
+    res.status(200).json({
+      success: true,
+      message: 'find specifiq customer orders succesfully',
+      data: result,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 // delete specifiq customer
 const deletSpecifiqcustomer = async (req: Request, res: Response) => {
   try {
@@ -82,10 +97,30 @@ const updateSpecifiqcustomer = async (req: Request, res: Response) => {
   }
 };
 
+// TOTAL PRICE ORDER
+const totalSpecifiqcustomerOrderPrice = async (req: Request, res: Response) => {
+  try {
+    const customerId = req.params.userId;
+
+    const result =
+      await customerServices.getSpecifiqCustomerTotalPrice(customerId);
+
+    res.status(200).json({
+      success: true,
+      message: 'Total price specifiq customer succesfully',
+      totalPrice: result,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 export const customerControlar = {
   createCustomer,
   getAllcustomer,
   getSpecifiqcustomer,
   deletSpecifiqcustomer,
   updateSpecifiqcustomer,
+  getSpecifiqcustomerOrder,
+  totalSpecifiqcustomerOrderPrice,
 };
