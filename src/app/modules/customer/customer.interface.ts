@@ -23,7 +23,7 @@ export type customer = {
   age: string;
   email: string;
   isActive: true | false;
-  hobbies?: string;
+  hobbies?: string[];
   address: Address;
   orders?: Orders[];
 };

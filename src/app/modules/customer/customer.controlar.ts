@@ -1,12 +1,15 @@
 import { Request, Response } from 'express';
 import { customerServices } from './customer.service';
+import customerValidationSchema from './customer.validation';
 
 // create a new customer
 const createCustomer = async (req: Request, res: Response) => {
   try {
     const customerdata = req.body;
 
-    const result = await customerServices.createCustomerDB(customerdata);
+    const customerParseZod = customerValidationSchema.parse(customerdata);
+
+    const result = await customerServices.createCustomerDB(customerParseZod);
 
     res.status(200).json({
       success: true,

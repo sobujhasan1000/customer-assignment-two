@@ -31,7 +31,7 @@ const customerschema = new Schema<customer>({
   age: { type: String, required: true },
   email: { type: String, required: true },
   isActive: { type: Boolean, required: true },
-  hobbies: { type: [String] },
+  hobbies: { type: [String], required: true },
   address: {
     type: addressSchema,
     required: true,
