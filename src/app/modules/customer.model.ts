@@ -28,7 +28,7 @@ const customerschema = new Schema<customer>({
   password: { type: String, required: true },
   userName: { type: String, required: true },
   fullName: { type: fullNameSchema, required: true },
-  age: { type: String, required: true },
+  age: { type: Number, required: true },
   email: { type: String, required: true },
   isActive: { type: Boolean, required: true },
   hobbies: { type: [String], required: true },

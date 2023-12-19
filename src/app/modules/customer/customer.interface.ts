@@ -20,7 +20,7 @@ export type customer = {
   password: string;
   userName: string;
   fullName: FullName;
-  age: string;
+  age: number;
   email: string;
   isActive: true | false;
   hobbies?: string[];

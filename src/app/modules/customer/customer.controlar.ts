@@ -17,7 +17,7 @@ const createCustomer = async (req: Request, res: Response) => {
       data: result,
     });
   } catch (err) {
-    console.log(err);
+    // console.log(err);
   }
 };
 
@@ -32,7 +32,7 @@ const getAllcustomer = async (req: Request, res: Response) => {
       data: result,
     });
   } catch (err) {
-    console.log(err);
+    // console.log(err);
   }
 };
 
@@ -48,7 +48,7 @@ const getSpecifiqcustomer = async (req: Request, res: Response) => {
       data: result,
     });
   } catch (err) {
-    console.log(err);
+    // console.log(err);
   }
 };
 
@@ -63,7 +63,7 @@ const getSpecifiqcustomerOrder = async (req: Request, res: Response) => {
       data: result,
     });
   } catch (err) {
-    console.log(err);
+    // console.log(err);
   }
 };
 
@@ -79,7 +79,7 @@ const deletSpecifiqcustomer = async (req: Request, res: Response) => {
       data: result,
     });
   } catch (err) {
-    console.log(err);
+    // console.log(err);
   }
 };
 
@@ -96,7 +96,7 @@ const updateSpecifiqcustomer = async (req: Request, res: Response) => {
       data: result,
     });
   } catch (err) {
-    console.log(err);
+    // console.log(err);
   }
 };
 
@@ -114,7 +114,7 @@ const totalSpecifiqcustomerOrderPrice = async (req: Request, res: Response) => {
       totalPrice: result,
     });
   } catch (err) {
-    console.log(err);
+    // console.log(err);
   }
 };
 

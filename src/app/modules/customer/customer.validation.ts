@@ -22,7 +22,7 @@ const customerValidationSchema = z.object({
   password: z.string().min(6),
   userName: z.string(),
   fullName: fullNameSchema,
-  age: z.string(),
+  age: z.number(),
   email: z.string().email(),
   isActive: z.boolean(),
   hobbies: z.array(z.string()),
