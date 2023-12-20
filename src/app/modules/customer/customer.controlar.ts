@@ -131,7 +131,7 @@ const addNewProductCustomer = async (req: Request, res: Response) => {
     res.status(200).json({
       success: true,
       message: 'new product add succesfully',
-      totalPrice: result,
+      addproduct: result,
     });
   } catch (err) {
     // console.log(err);

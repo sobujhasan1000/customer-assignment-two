@@ -21,5 +21,6 @@ router.get(
   '/api/users/:userId/order',
   customerControlar.getSpecifiqcustomerOrder,
 );
+router.put('/api/users/:userId/order', customerControlar.addNewProductCustomer);
 
 export const customerRoutes = router;
