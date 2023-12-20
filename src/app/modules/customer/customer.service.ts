@@ -1,5 +1,5 @@
 import { customermodel } from '../customer.model';
-import { customer } from './customer.interface';
+import { Orders, customer } from './customer.interface';
 
 const createCustomerDB = async (customer: customer) => {
   const result = await customermodel.create(customer);
@@ -36,6 +36,25 @@ const getSpecifiqCustomerTotalPrice = async (id: string) => {
   return TotalPrice;
 };
 
+//  add new product
+const addNewProduct = async (id: string, newProduct: Orders) => {
+  try {
+    const existingCustomer = await customermodel.findOne({ id });
+    if (!existingCustomer) {
+      return null;
+    }
+
+    if (!existingCustomer.orders) {
+      existingCustomer.orders = [];
+    }
+    existingCustomer.orders?.push(newProduct);
+    const updataProduct = await existingCustomer.save();
+    return updataProduct;
+  } catch (error) {
+    return null;
+  }
+};
+
 export const customerServices = {
   createCustomerDB,
   getAllCustomerDB,
@@ -44,4 +63,5 @@ export const customerServices = {
   updateSpecifiqCustomerDB,
   getSpecifiqCustomerOrder,
   getSpecifiqCustomerTotalPrice,
+  addNewProduct,
 };

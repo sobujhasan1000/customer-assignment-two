@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import { customerServices } from './customer.service';
 import customerValidationSchema from './customer.validation';
+import { Orders } from './customer.interface';
 
 // create a new customer
 const createCustomer = async (req: Request, res: Response) => {
@@ -118,6 +119,25 @@ const totalSpecifiqcustomerOrderPrice = async (req: Request, res: Response) => {
   }
 };
 
+// add new product
+const addNewProductCustomer = async (req: Request, res: Response) => {
+  try {
+    const customerId = req.params.UserId;
+    const newProductData: Orders = req.body;
+    const result = await customerServices.addNewProduct(
+      customerId,
+      newProductData,
+    );
+    res.status(200).json({
+      success: true,
+      message: 'new product add succesfully',
+      totalPrice: result,
+    });
+  } catch (err) {
+    // console.log(err);
+  }
+};
+
 export const customerControlar = {
   createCustomer,
   getAllcustomer,
@@ -126,4 +146,5 @@ export const customerControlar = {
   updateSpecifiqcustomer,
   getSpecifiqcustomerOrder,
   totalSpecifiqcustomerOrderPrice,
+  addNewProductCustomer,
 };
