@@ -18,9 +18,12 @@ router.get(
   customerControlar.totalSpecifiqcustomerOrderPrice,
 );
 router.get(
-  '/api/users/:userId/order',
+  '/api/users/:userId/orders',
   customerControlar.getSpecifiqcustomerOrder,
 );
-router.put('/api/users/:userId/order', customerControlar.addNewProductCustomer);
+router.put(
+  '/api/users/:userId/orders',
+  customerControlar.addNewProductCustomer,
+);
 
 export const customerRoutes = router;
