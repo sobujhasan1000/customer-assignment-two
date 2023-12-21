@@ -24,7 +24,7 @@ const orderSchema = new Schema<Orders>({
 });
 
 const customerschema = new Schema<customer>({
-  id: { type: Number, required: true },
+  userId: { type: Number, required: true },
   password: { type: String, required: true },
   userName: { type: String, required: true },
   fullName: { type: fullNameSchema, required: true },

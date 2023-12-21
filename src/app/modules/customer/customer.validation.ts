@@ -18,7 +18,7 @@ const orderSchema = z.object({
 });
 
 const customerValidationSchema = z.object({
-  id: z.number().positive(),
+  userId: z.number().positive(),
   password: z.string().min(6),
   userName: z.string(),
   fullName: fullNameSchema,

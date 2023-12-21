@@ -16,7 +16,7 @@ export type Orders = {
 };
 
 export type customer = {
-  id: number;
+  userId: number;
   password: string;
   userName: string;
   fullName: FullName;
