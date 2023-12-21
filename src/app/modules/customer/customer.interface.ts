@@ -22,8 +22,8 @@ export type customer = {
   fullName: FullName;
   age: number;
   email: string;
-  isActive: true | false;
+  isActive: boolean;
   hobbies?: string[];
   address: Address;
-  orders?: Orders[];
+  orders?: Orders[] | undefined;
 };
